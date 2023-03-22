@@ -25,7 +25,7 @@ body {
 
 .menu-item {
     color: white;
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-size: clamp(3rem, 8vw, 5rem);
     /*font-family: "Ibarra Real Nova", serif;*/
     font-family: monospace;
 
@@ -39,12 +39,13 @@ body {
     height: 100vh;
     width: 100vw;
 
-    background-image: radial-gradient(
-        rgba(2255, 255, 255, 0.1) 9%,
+    /*background-image: radial-gradient(
+        rgba(255, 255, 255, 0.1) 9%,
         transparent 9%
-    );
+    );*/
+    background-image: url(../media/images/inspiration-geometry.png);
     background-position: 0% 0%;
-    background-size: 12vmin 12vmin;
+    background-size: 50vmin 50vmin;
 
     position: absolute;
     left: 0px;
@@ -52,30 +53,104 @@ body {
     z-index: 1;
 
     transition: opacity 800ms ease, 
-        background-size 800ms ease;
-    
-    background-position: 800ms ease;
+        background-size 800ms ease,
+        background-position 800ms ease;
 }
 
+/*#menu-background-pattern {
+    background-image: radial-gradient(
+        rgba(255, 255, 255, 0.1) 9%,
+        circle, 
+        transparent 9%),
+        linear-gradient(
+            45deg, 
+            transparent 46%, 
+            #4f46e4 47%, 
+            #4f46e4 52%, 
+            transparent 53%), 
+        linear-gradient(
+            135deg, 
+            transparent 46%, 
+            #4f46e4 47%, 
+            #4f46e4 52%, 
+            transparent 53%);
+    background-position: 0% 0%;
+    background-size: 12vmin 12vmin;
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+}*/
+
+
+
 #menu-items:hover ~ #menu-background-pattern {
-    background-size: 11vmin 11vmin;
+    background-size: 45vmin 45vmin;
     opacity: 0.5;
 }
 
 #menu[data-active-index="0"] > #menu-background-pattern {
-    background-position: 0% 0%;
-}
-
-#menu[data-active-index="1"] > #menu-background-pattern {
     background-position: 0% -25%;
 }
 
-#menu[data-active-index="2"] > #menu-background-pattern {
+#menu[data-active-index="1"] > #menu-background-pattern {
     background-position: 0% -50%;
 }
 
-#menu[data-active-index="3"] > #menu-background-pattern {
+#menu[data-active-index="2"] > #menu-background-pattern {
     background-position: 0% -75%;
 }
 
-/* this is a test */
+#menu[data-active-index="3"] > #menu-background-pattern {
+    background-position: 0% -100%;
+}
+
+#menu[data-active-index="4"] > #menu-background-pattern {
+    background-position: 0% -125%;
+}
+
+#menu-background-image {
+    height: 100%;
+    width: 100%;
+    
+    background-image: url(../media/images/IMG_6847.jpg);
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 0;
+
+    background-position: center 65%;
+    background-size: 100vmax;
+    opacity: 0.15;
+
+    transition: opacity 800ms ease,
+        background-size 800ms ease,
+        background-position 800ms ease;
+}
+
+#menu-items:hover ~ #menu-background-image {
+    background-size: 100vmax;
+    opacity: 0.10;
+}
+
+#menu[data-active-index="0"] > #menu-background-image {
+    background-position: center 70%;
+}
+
+#menu[data-active-index="1"] > #menu-background-image {
+    background-position: center 75%;
+}
+
+#menu[data-active-index="2"] > #menu-background-image {
+    background-position: center 80%;
+}
+
+#menu[data-active-index="3"] > #menu-background-image {
+    background-position: center 85%;
+}
+
+#menu[data-active-index="4"] > #menu-background-image {
+    background-position: center 90%;
+}
