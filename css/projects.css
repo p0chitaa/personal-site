@@ -157,11 +157,11 @@ body {
 }
 
 #projects[data-active-index="1"] > #menu-background-pattern {
-    background-position: -20% -25%;
+    background-position: -15% -25%;
 }
 
 #projects[data-active-index="2"] > #menu-background-pattern {
-    background-position: -40% -25%;
+    background-position: -30% -25%;
 }
 
 #projects[data-active-index="3"] > #menu-background-pattern {
@@ -169,11 +169,11 @@ body {
 }
 
 #projects[data-active-index="4"] > #menu-background-pattern {
-    background-position: -20% -50%;
+    background-position: -15% -50%;
 }
 
 #projects[data-active-index="5"] > #menu-background-pattern {
-    background-position: -40% -50%;
+    background-position: -30% -50%;
 }
 
 
