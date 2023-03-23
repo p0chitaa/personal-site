@@ -23,6 +23,10 @@ body {
     top: 0px;
     z-index: -5;
     opacity: 0.5;
+    
+    transition: opacity 800ms ease, 
+        background-size 800ms ease,
+        background-position 800ms ease;
 }
 
 #menu-background-image {
@@ -39,6 +43,10 @@ body {
     background-position: 0% 70%;
     background-size: 270vmax;
     opacity: 0.10;
+
+    transition: opacity 800ms ease,
+        background-size 800ms ease,
+        background-position 800ms ease;
 }
 
 #arrow {
@@ -137,4 +145,59 @@ body {
     top: 65%;
     left: 10%;
     width: 13.7vw;
+}
+
+#projects:hover > #menu-background-pattern {
+    background-size: 40vmin 40vmin;
+    opacity: 0.5;
+}
+
+#projects[data-active-index="0"] > #menu-background-pattern {
+    background-position: 0% -25%;
+}
+
+#projects[data-active-index="1"] > #menu-background-pattern {
+    background-position: -20% -25%;
+}
+
+#projects[data-active-index="2"] > #menu-background-pattern {
+    background-position: -40% -25%;
+}
+
+#projects[data-active-index="3"] > #menu-background-pattern {
+    background-position: 0% -50%;
+}
+
+#projects[data-active-index="4"] > #menu-background-pattern {
+    background-position: -20% -50%;
+}
+
+#projects[data-active-index="5"] > #menu-background-pattern {
+    background-position: -40% -50%;
+}
+
+
+
+#projects[data-active-index="0"] > #menu-background-image {
+    background-position: 0% 70%;
+}
+
+#projects[data-active-index="1"] > #menu-background-image {
+    background-position: 5% 70%;
+}
+
+#projects[data-active-index="2"] > #menu-background-image {
+    background-position: 10% 70%;
+}
+
+#projects[data-active-index="3"] > #menu-background-image {
+    background-position: 0% 80%;
+}
+
+#projects[data-active-index="4"] > #menu-background-image {
+    background-position: 5% 80%;
+}
+
+#projects[data-active-index="5"] > #menu-background-image {
+    background-position: 10% 80%;
 }

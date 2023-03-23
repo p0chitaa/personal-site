@@ -8,9 +8,9 @@
     <title>projects</title>
 </head>
 <body>
-    <div id="menu-background-image"></div>
     <div id="projects">
-        <a href="https://github.com/p0chitaa/notes" target="_blank">
+        <div id="menu-background-image"></div>
+        <a class="head" href="https://github.com/p0chitaa/notes" target="_blank">
             <div class="project">
                 <div class="border"></div>
                 <div class="info">
@@ -21,7 +21,7 @@
                 </div>
             </div>
         </a>
-        <a href="https://github.com/p0chitaa/personal-site" target="_blank">
+        <a class="head" href="https://github.com/p0chitaa/personal-site" target="_blank">
             <div class="project">
                 <div class="border"></div>
                 <div class="info" id="html">
@@ -33,23 +33,31 @@
         </a>
         <div class="project">
             <div class="border"></div>
-            <div class="info"></div>
+            <div class="info">
+                <h1>placeholder</h1>
+            </div>
         </div>
         <div class="project">
             <div class="border"></div>
-            <div class="info"></div>
+            <div class="info">
+                <h1>placeholder</h1>
+            </div>
         </div>
         <div class="project">
             <div class="border"></div>
-            <div class="info"></div>
+            <div class="info">
+                <h1>placeholder</h1>
+            </div>
         </div>
         <div class="project">
             <div class="border"></div>
-            <div class="info"></div>
+            <div class="info">
+                <h1>placeholder</h1>
+            </div>
         </div>
+        <div id="menu-background-pattern"></div>
     </div>
     <a href="../index.html" id="link" draggable="false"><img id="arrow" src="../media/images/pnghut_arrows-icon-left-arrow-back-material-property-logo.png"></a>
-    <div id="menu-background-pattern"></div>
     <script>
         document.getElementById("projects").onmousemove = e => {
             for(const project of document.getElementsByClassName("project")) {
@@ -61,6 +69,17 @@
                 project.style.setProperty("--mouse-y", `${y}px`)
             }
         }
+
+        const menu = document.getElementById("projects");
+    
+        Array.from(document.getElementsByClassName("project"))
+            .forEach((item, index) => {
+                item.onmouseover = () => {
+                    menu.dataset.activeIndex = index;
+                }
+            });
+        console.log(Array.from(document.getElementsByClassName("project")));
+    </script>
     </script>
 </body>
 </html>
