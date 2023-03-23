@@ -52,7 +52,7 @@ header > p {
 
 .menu-item {
     color: rgb(225, 225, 225);
-    font-size: clamp(3rem, 8vw, 5rem);
+    font-size: clamp(3rem, 8vw, 4rem);
     /*font-family: "Ibarra Real Nova", serif;*/
     font-family: monospace;
 
@@ -109,6 +109,10 @@ header > p {
     background-position: 0% -125%;
 }
 
+#menu[data-active-index="5"] > #menu-background-pattern {
+    background-position: 0% -150%;
+}
+
 #menu-background-image {
     height: 100%;
     width: 100%;
@@ -152,4 +156,8 @@ header > p {
 
 #menu[data-active-index="4"] > #menu-background-image {
     background-position: 0% 90%;
+}
+
+#menu[data-active-index="5"] > #menu-background-image {
+    background-position: 0% 95%;
 }
