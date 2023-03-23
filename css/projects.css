@@ -1,0 +1,140 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(19, 19, 19);
+    margin: 0rem;
+    overflow: hidden;
+    padding: 0px;
+}
+
+#menu-background-pattern {
+    height: 100vh;
+    width: 100vw;
+
+    background-image: url(../media/images/inspiration-geometry.png);
+    background-size: 45vmin 45vmin;
+
+    position: absolute;
+    background-position: 0% -25%;
+    left: 0px;
+    top: 0px;
+    z-index: -5;
+    opacity: 0.5;
+}
+
+#menu-background-image {
+    height: 100%;
+    width: 100%;
+    
+    background-image: url(../media/images/IMG_6858.jpg);
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -10000;
+
+    background-position: 0% 70%;
+    background-size: 270vmax;
+    opacity: 0.10;
+}
+
+#arrow {
+    z-index: 10000;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    max-width: 5%;
+    max-height: 5%;
+    fill: rgb(197, 197, 197);
+}
+
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 922px;
+    width: calc(100%-20px);
+}
+
+#github {
+    width: 2vw;
+    left: 53%;
+    top: 38%;
+}
+
+.project {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 7px;
+    cursor: pointer;
+    height: 260px;
+    width: 300px;
+
+    position: relative;
+}
+
+.project::before {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+
+    border-radius: inherit;
+    content: "";
+    opacity: 0;
+    transition: opacity 500ms;
+
+    z-index: 2;
+}
+
+.project::before {
+    z-index: 3;
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.1),
+        transparent 40%
+    );
+}
+
+.project:hover::before,
+.project:hover > .border {
+    opacity: 1;
+}
+
+.info {
+    background-color: rgba(19, 19, 19, 0.5);
+    position: relative;
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+
+    border-radius: inherit;
+    margin: 1px;
+
+    color: rgb(197, 197, 197);
+    font-family: monospace;
+}
+
+.info > img {
+    position: absolute;
+    border-radius: 50%;
+    width: 5vw;
+    top: 15%;
+    left: 34%;
+}
+
+.info > h1 {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+}
+
+.info > p {
+    position: absolute;
+    top: 65%;
+    left: 10%;
+    width: 13.7vw;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/experience.css">
+    <title>experience</title>
+</head>
+<body>
+    <div id="menu-background-image"></div>
+    <div id="menu-background-pattern"></div>
+    <div id="resume-wrapper" data-mouse-down-at="0" data-prev-percentage="0">
+        <div class="entry">
+            <h2>SECS Teaching Assistant and Tutor</h2>
+            <h5>Oakland University, Rochester, MI<br>April 2022 – Present</h5>
+            <ul>
+                <li>
+                    <p>Designed and taught curriculums for Computer Science summer 
+                    modules, teaching coding and computer skills to students from 
+                    grades 3-12 </p>
+                </li>
+                <li>
+                    <p>Responsible for organizing, leading, and designing engineering field 
+                    trip modules for grades 3-8</p>
+                </li>
+                <li>
+                    <p>Assists SECS (School of Engineering and Computer Science) 
+                    students with study skills, time management, course content, and 
+                    techniques</p>
+                </li>
+            </ul>
+        </div>
+        <div class="entry">
+            <h2>UTS Student Developer</h2>
+            <h5>Oakland University, Rochester, MI<br>March 2021 – April 2022</h5>
+            <ul>
+                <li>
+                    <p>Designed and developed the interface for the Emergency 
+                    Notifications system at Oakland University (ADD LINK TO DEMO)</p>
+                </li>
+                <li>
+                    <p>Works closely with University Technology Services developers on 
+                    the MySail student portal, mobile initiatives, and web development</p>
+                </li>
+            </ul>
+        </div>
+        <div class="entry">
+            <h2>Logistics Coordinator</h2>
+            <h5>Begonia Brothers Services, Northville, MI<br>April 2020 – March 2021</h5>
+            <p id="responsible">Responsible for:</p>
+            <ul>
+                <li>
+                    <p>Managing and optimizing the delivery schedule of bulk products</p>
+                </li>
+                <li>
+                    <p>Maintaining organization of key items</p>
+                </li>
+                <li>
+                    <p>Managing inventory</p>
+                </li>
+                <li>
+                    <p>Assisting the Chief Financial Officer with invoicing, inventory, and job costing</p>
+                </li>
+            </ul>
+        </div>
+        <div class="entry">
+            <h2>ICT Intern</h2>
+            <h5>NORMA Group, Auburn Hills, MI<br>June 2019–August 2019</h5>
+            <p id="responsible">Directly assisted the IT team with a wide range of duties and projects:</p>
+            <ul>
+                <li>
+                    <p>In charge of checking for Helpdesk tickets and solving them as quickly 
+                    and efficiently as possible in a professional and timely manner</p>
+                </li>
+                <li>
+                    <p>Supported the IT team in maintaining hardware, software, and other 
+                    systems – including repairs, installs, and daily issues</p>
+                </li>
+            </ul>
+        </div>
+        <div class="entry">
+            <h2>Career Objective</h2>
+            <p>Seeking a computer science related position; coming with both professional 
+            programming and corporate internship experience, great communication and 
+            team working skills, detail oriented, and proficiency in multiple programming 
+            languages. Talented individual with strong coding background, desire to 
+            grow technical skills, and ability to learn new technologies swiftly. 
+            </p>
+        </div>
+    </div>
+    <a href="../index.html" id="link" draggable="false"><img id="arrow" src="../media/images/pnghut_arrows-icon-left-arrow-back-material-property-logo.png"></a>
+    <div class="center">
+        <div class="arrow"></div>
+    </div>
+    <script>
+        const blogs = document.getElementById("resume-wrapper");
+        const bgPattern = document.getElementById("menu-background-pattern");
+        const bg = document.getElementById("menu-background-image")
+
+        window.onmousedown = e => {
+            blogs.dataset.mouseDownAt = e.clientY;
+        }
+        
+        window.onmouseup = () => {
+            blogs.dataset.mouseDownAt = "0";
+            blogs.dataset.prevPercentage = blogs.dataset.percentage;
+        }
+
+        window.onmousemove = e => {
+            if(blogs.dataset.mouseDownAt === "0") return;
+            const mouseDelta = parseFloat(blogs.dataset.mouseDownAt) - e.clientY,
+                maxDelta = window.innerHeight / 2;
+
+            const percentage = (mouseDelta / maxDelta) * -100,
+                nextPercentageUnconstrained = parseFloat(blogs.dataset.prevPercentage) + percentage,
+                nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+
+            blogs.dataset.percentage = nextPercentage;
+            
+            blogs.animate({
+                transform: `translate(0%, ${nextPercentage/1.5}%)`
+            }, { duration: 1200, fill: "forwards" });
+
+            bgPattern.animate({
+                backgroundPosition: `0% ${-100 + nextPercentage/2}%`
+            }, { duration: 1200, fill: "forwards" });
+
+            bg.animate({
+                backgroundPosition: `0% ${85 + (nextPercentage*-1)/4}%`
+            }, { duration: 1200, fill: "forwards" });
+        }
+    </script>
+</body>
+</html>

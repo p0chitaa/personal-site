@@ -29,28 +29,28 @@
     <script>
         const bg = document.getElementById("menu-background-image")
         const bgPattern = document.getElementById("menu-background-pattern");
-        const track = document.getElementById("pics");
+        const pics = document.getElementById("pics");
 
         window.onmousedown = e => {
-            track.dataset.mouseDownAt = e.clientX;
+            pics.dataset.mouseDownAt = e.clientX;
         }
 
         window.onmouseup = e => {
-            track.dataset.mouseDownAt = "0";  
-            track.dataset.prevPercentage = track.dataset.percentage;
+            pics.dataset.mouseDownAt = "0";  
+            pics.dataset.prevPercentage = pics.dataset.percentage;
         }
 
         window.onmousemove = e => {
-            if(track.dataset.mouseDownAt === "0") return;
+            if(pics.dataset.mouseDownAt === "0") return;
         
-            const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+            const mouseDelta = parseFloat(pics.dataset.mouseDownAt) - e.clientX,
                 maxDelta = window.innerWidth / 2;
     
             const percentage = (mouseDelta / maxDelta) * -100,
-                nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
+                nextPercentageUnconstrained = parseFloat(pics.dataset.prevPercentage) + percentage,
                 nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
     
-            track.dataset.percentage = nextPercentage;
+            pics.dataset.percentage = nextPercentage;
             
             bg.animate({
                 backgroundPosition: `${nextPercentage/2*-1}% 75%`
@@ -60,11 +60,11 @@
                 backgroundPosition: `${nextPercentage}% -50%`
             }, { duration: 1200, fill: "forwards" });
 
-            track.animate({
+            pics.animate({
                 transform: `translate(${nextPercentage}%, -50%)`
             }, { duration: 1200, fill: "forwards" });
   
-            for(const image of track.getElementsByClassName("pic")) {
+            for(const image of pics.getElementsByClassName("pic")) {
                 image.animate({
                     objectPosition: `${100 + nextPercentage}% center`
                 }, { duration: 1200, fill: "forwards" });

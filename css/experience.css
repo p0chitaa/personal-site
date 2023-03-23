@@ -6,8 +6,11 @@ body {
     overflow: hidden;
 }
 
-a {
-    text-decoration: none;
+ul {
+    color: rgb(197, 197, 197);
+    font-family: monospace;
+    font-size: 1rem;
+    list-style-type: circle;
 }
 
 #menu-background-pattern {
@@ -18,7 +21,7 @@ a {
     background-size: 45vmin 45vmin;
 
     position: absolute;
-    background-position: 0% -75%;
+    background-position: 0% -100%;
     left: 0px;
     top: 0px;
     z-index: -5;
@@ -36,7 +39,7 @@ a {
     top: 0px;
     z-index: -10000;
 
-    background-position: 0% 80%;
+    background-position: 0% 85%;
     background-size: 270vmax;
     opacity: 0.10;
 }
@@ -51,17 +54,21 @@ a {
     fill: rgb(197, 197, 197);
 }
 
-#blog-wrapper {
+#resume-wrapper {
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 22%;
-    left: 27%;
+    left: 30%;
     width: 80vmin;
     z-index: 500;
     gap: 15vmin;
     transform: translate(0%, 0%);
     justify-content: center;
+}
+
+#responsible {
+    margin-bottom: -1%;
 }
 
 .entry {
@@ -72,6 +79,19 @@ a {
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+}
+
+.entry > h1 {
+    /*position: absolute;
+    left: 20%;
+    top: 25%;
+    transform: translate(0%, -50%);*/
+    color: rgb(197, 197, 197);
+    font-size: 3.5rem;
+    font-family: monospace;
+    opacity: 1;
+    margin-top: 0%;
+    margin-bottom: 25%;
 }
 
 .entry > h2 {
@@ -109,7 +129,6 @@ a {
     font-size: 1rem;
     width: 80vmin;
 }
-
 
 /* arrow animation taken from https://gscode.in/css-scroll-down-arrows-animation/ */
 .center

@@ -1,6 +1,33 @@
 body {
     background-color: rgb(20, 20, 20);
     margin: 0px;
+    overflow: hidden;
+}
+
+header {
+    color: rgb(190, 190, 190);
+    font-size: 2.5rem;
+    /*font-family: "Ibarra Real Nova", serif;*/
+    font-family: monospace;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    text-decoration: none;
+    padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+    transition: opacity 400ms ease;
+}
+
+header > p {
+    color: rgb(150, 150, 150);
+    font-size: 1rem;
+    /*font-family: "Ibarra Real Nova", serif;*/
+    font-family: monospace;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    text-decoration: none;
+    padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+    transition: opacity 400ms ease;
 }
 
 #menu {
@@ -24,7 +51,7 @@ body {
 }
 
 .menu-item {
-    color: white;
+    color: rgb(225, 225, 225);
     font-size: clamp(3rem, 8vw, 5rem);
     /*font-family: "Ibarra Real Nova", serif;*/
     font-family: monospace;

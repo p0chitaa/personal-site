@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/projects.css">
+    <title>projects</title>
+</head>
+<body>
+    <div id="menu-background-image"></div>
+    <div id="projects">
+        <a href="https://github.com/p0chitaa/notes" target="_blank">
+            <div class="project">
+                <div class="border"></div>
+                <div class="info">
+                    <img src="../media/images/122924596.png">
+                    <img id="github" src="../media/images/github-mark-white.png">
+                    <h1>school notes</h1>
+                    <p>a link to my github repository of some school notes written in markdown for the sole purpose of getting rid of onenote</p>
+                </div>
+            </div>
+        </a>
+        <a href="https://github.com/p0chitaa/personal-site" target="_blank">
+            <div class="project">
+                <div class="border"></div>
+                <div class="info" id="html">
+                    <img src="../media/images/PngItem_3900265.png" style="top:25%">
+                    <h1>this source code!</h1>
+                    <p>links to the github repository containing the source code for this very site!</p>
+                </div>
+            </div>
+        </a>
+        <div class="project">
+            <div class="border"></div>
+            <div class="info"></div>
+        </div>
+        <div class="project">
+            <div class="border"></div>
+            <div class="info"></div>
+        </div>
+        <div class="project">
+            <div class="border"></div>
+            <div class="info"></div>
+        </div>
+        <div class="project">
+            <div class="border"></div>
+            <div class="info"></div>
+        </div>
+    </div>
+    <a href="../index.html" id="link" draggable="false"><img id="arrow" src="../media/images/pnghut_arrows-icon-left-arrow-back-material-property-logo.png"></a>
+    <div id="menu-background-pattern"></div>
+    <script>
+        document.getElementById("projects").onmousemove = e => {
+            for(const project of document.getElementsByClassName("project")) {
+                const box = project.getBoundingClientRect(),
+                    x = e.clientX - box.left,
+                    y = e.clientY - box.top;
+                
+                project.style.setProperty("--mouse-x", `${x}px`)
+                project.style.setProperty("--mouse-y", `${y}px`)
+            }
+        }
+    </script>
+</body>
+</html>
