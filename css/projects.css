@@ -18,7 +18,7 @@ body {
     background-size: 45vmin 45vmin;
 
     position: absolute;
-    background-position: 0% -25%;
+    background-position: 0% -50%;
     left: 0px;
     top: 0px;
     z-index: -5;
@@ -40,7 +40,7 @@ body {
     top: 0px;
     z-index: -10000;
 
-    background-position: 0% 70%;
+    background-position: 0% 75%;
     background-size: 270vmax;
     opacity: 0.10;
 

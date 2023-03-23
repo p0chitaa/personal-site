@@ -18,7 +18,7 @@ a {
     background-size: 45vmin 45vmin;
 
     position: absolute;
-    background-position: 0% -75%;
+    background-position: 0% -100%;
     left: 0px;
     top: 0px;
     z-index: -5;
@@ -36,7 +36,7 @@ a {
     top: 0px;
     z-index: -10000;
 
-    background-position: 0% 80%;
+    background-position: 0% 85%;
     background-size: 270vmax;
     opacity: 0.10;
 }

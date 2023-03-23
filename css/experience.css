@@ -21,7 +21,7 @@ ul {
     background-size: 45vmin 45vmin;
 
     position: absolute;
-    background-position: 0% -100%;
+    background-position: 0% -25%;
     left: 0px;
     top: 0px;
     z-index: -5;
@@ -39,7 +39,7 @@ ul {
     top: 0px;
     z-index: -10000;
 
-    background-position: 0% 85%;
+    background-position: 0% 70%;
     background-size: 270vmax;
     opacity: 0.10;
 }
