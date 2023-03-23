@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/blog.css">
+    <title>blog</title>
+</head>
+<body>
+    <div id="menu-background-image"></div>
+    <div id="blog-wrapper" data-mouse-down-at="0" data-prev-percentage="0">
+        <div class="entry">
+            <h2>finally got the vertical scroll on the blog page!!!!</h2>
+            <h5>3/22/2023</h5>
+            <p>ok so i made a really nice parallax effect on the about me page that goes along with the vertical scrolling, and i couldn't for the life of me get this to work on this blog page. sat there trying to translate all the x-coordinates to the y-coordinates and ended up making a TON of stupid mistakes and forgetting to add things and change others. anywho, its finally working and looking very pretty :)</p>
+        </div>
+        <div class="entry">
+            <h2>snowboarding trip to colorado</h2>
+            <h5>3/21/2023</h5>
+            <p>for the past week, me and the rest of my immediate family took a trip to Durango, Colorado to go snowboarding/skiing. honestly this is something i've been super fired up to do, as snowboarding is one of my favorite things to do. see the <a href="./aboutMe.html">about me</a> page for pictures! definitely hard to find time to work on this project out here tho.</p>
+        </div>
+        <div class="entry">
+            <h2>my first personal website</h2>
+            <h5>3/20/2023</h5>
+            <p>today i am finally starting to work on my first personal portfolio website. thankful for this web and mobile systems class to provide motivation to actually get this done. (plus ill be able to flex some of the front-end skills i learned as a web developer for oakland university.)</p>
+        </div>
+    </div>
+    <a href="../index.html" id="link" draggable="false"><img id="arrow" src="../media/images/pnghut_arrows-icon-left-arrow-back-material-property-logo.png"></a>
+    <div class="center">
+        <div class="arrow"></div>
+    </div>
+    <div id="menu-background-pattern"></div>
+    <script>
+        const blogs = document.getElementById("blog-wrapper");
+        const bgPattern = document.getElementById("menu-background-pattern");
+        const bg = document.getElementById("menu-background-image")
+
+        window.onmousedown = e => {
+            blogs.dataset.mouseDownAt = e.clientY;
+        }
+        
+        window.onmouseup = () => {
+            blogs.dataset.mouseDownAt = "0";
+            blogs.dataset.prevPercentage = blogs.dataset.percentage;
+        }
+
+        window.onmousemove = e => {
+            if(blogs.dataset.mouseDownAt === "0") return;
+            const mouseDelta = parseFloat(blogs.dataset.mouseDownAt) - e.clientY,
+                maxDelta = window.innerHeight / 2;
+
+            const percentage = (mouseDelta / maxDelta) * -100,
+                nextPercentageUnconstrained = parseFloat(blogs.dataset.prevPercentage) + percentage,
+                nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+
+            blogs.dataset.percentage = nextPercentage;
+            
+            blogs.animate({
+                transform: `translate(0%, ${nextPercentage/1.5}%)`
+            }, { duration: 1200, fill: "forwards" });
+
+            bgPattern.animate({
+                backgroundPosition: `0% ${-75 + nextPercentage/2}%`
+            }, { duration: 1200, fill: "forwards" });
+
+            bg.animate({
+                backgroundPosition: `0% ${80 + (nextPercentage*-1)/4}%`
+            }, { duration: 1200, fill: "forwards" });
+        }
+    </script>
+</body>
+</html>
