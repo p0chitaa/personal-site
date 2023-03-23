@@ -1,0 +1,88 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(19, 19, 19);
+    margin: 0rem;
+    overflow: hidden;
+}
+
+#pics > .pic {
+    width: 40vmin;
+    height: 56vmin;
+    object-fit: cover;
+    object-position: 100% 50%;
+}
+
+#pics {
+    display: flex;
+    gap: 4vmin;
+    position: absolute;
+    left: 44%;
+    top: 50%;
+    transform: translate(0%, -50%);
+    opacity: 1;
+    z-index: 1;
+}
+
+img {
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#menu-background-pattern {
+    height: 100vh;
+    width: 100vw;
+
+    background-image: url(../media/images/inspiration-geometry.png);
+    background-position: 0% -50%;
+    background-size: 45vmin 45vmin;
+
+    left: 0px;
+    top: 0px;
+    z-index: -5;
+    opacity: 0.5;
+}
+
+#menu-background-image {
+    height: 100%;
+    width: 100%;
+    
+    background-image: url(../media/images/IMG_6858.jpg);
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -10000;
+
+    background-position: 0% 75%;
+    background-size: 270vmax;
+    opacity: 0.10;
+}
+
+#arrow {
+    z-index: 10000;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    max-width: 5%;
+    max-height: 5%;
+}
+
+#boarding-header {
+    color: rgb(197, 197, 197);
+    font-family: monospace;
+    font-size: 3rem;
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#boarding {
+    color: rgb(197, 197, 197);
+    font-family: monospace;
+}

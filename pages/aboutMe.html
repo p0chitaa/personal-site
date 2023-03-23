@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/aboutMe.css">
+    <title>about me</title>
+</head>
+<body>
+    <div id="menu-background-image"></div>
+    <div id="pics" data-mouse-down-at="0" data-prev-percentage="0">
+        <div class="pic">
+            <h2 id="boarding-header">snowboarding</h2>
+            <p id="boarding">testing</p>
+        </div>
+        <img class="pic" src="../media/images/IMG_6832.jpg" draggable="false">
+        <img class="pic" src="../media/images/IMG_6763.jpg" draggable="false">
+        <img class="pic" src="../media/images/IMG_6829.jpg" draggable="false">
+        <img class="pic" src="../media/images/IMG_6835.jpg" draggable="false">
+        <img class="pic" src="../media/images/IMG_6837.jpg" draggable="false">
+        <img class="pic" src="../media/images/IMG_6846.jpg" draggable="false">
+        <img class="pic" src="../media/images/IMG_6820.jpg" draggable="false">
+        <img class="pic" src="../media/images/IMG_6851.jpg" draggable="false">
+        <img class="pic" src="../media/images/IMG_6854.jpg" draggable="false">
+    </div>
+    <a href="../index.html" id="link" draggable="false"><img id="arrow" src="../media/images/pnghut_arrows-icon-left-arrow-back-material-property-logo.png"></a>
+    <div id="menu-background-pattern"></div>
+    <script>
+        const bg = document.getElementById("menu-background-image")
+        const bgPattern = document.getElementById("menu-background-pattern");
+        const track = document.getElementById("pics");
+
+        window.onmousedown = e => {
+            track.dataset.mouseDownAt = e.clientX;
+        }
+
+        window.onmouseup = e => {
+            track.dataset.mouseDownAt = "0";  
+            track.dataset.prevPercentage = track.dataset.percentage;
+        }
+
+        window.onmousemove = e => {
+            if(track.dataset.mouseDownAt === "0") return;
+        
+            const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+                maxDelta = window.innerWidth / 2;
+    
+            const percentage = (mouseDelta / maxDelta) * -100,
+                nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
+                nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+    
+            track.dataset.percentage = nextPercentage;
+            
+            bg.animate({
+                backgroundPosition: `${nextPercentage*-1}% 75%`
+            }, { duration: 1200, fill: "forwards" });
+
+            bgPattern.animate({
+                backgroundPosition: `${nextPercentage}% -50%`
+            }, { duration: 1200, fill: "forwards" });
+
+            track.animate({
+                transform: `translate(${nextPercentage}%, -50%)`
+            }, { duration: 1200, fill: "forwards" });
+  
+            for(const image of track.getElementsByClassName("pic")) {
+                image.animate({
+                    objectPosition: `${100 + nextPercentage}% center`
+                }, { duration: 1200, fill: "forwards" });
+            }
+        }
+    </script>
+</body>
+</html>
