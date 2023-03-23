@@ -68,9 +68,9 @@ body {
 }
 
 #github {
-    width: 2vw;
+    width: 15%;
     left: 53%;
-    top: 38%;
+    top: 36%;
 }
 
 .project {
@@ -128,8 +128,8 @@ body {
 .info > img {
     position: absolute;
     border-radius: 50%;
-    width: 5vw;
-    top: 15%;
+    width: 35%;
+    top: 11%;
     left: 34%;
 }
 
@@ -144,7 +144,7 @@ body {
     position: absolute;
     top: 65%;
     left: 10%;
-    width: 13.7vw;
+    width: 80%;
 }
 
 #projects:hover > #menu-background-pattern {
