@@ -48,10 +48,10 @@
 
         window.onmousemove = e => {
             if(blogs.dataset.mouseDownAt === "0") return;
-            const mouseDelta = parseFloat(blogs.dataset.mouseDownAt) - e.clientY,
-                maxDelta = window.innerHeight / 2;
+            const mouseMove = parseFloat(blogs.dataset.mouseDownAt) - e.clientY,
+                maxMove = window.innerHeight / 2;
 
-            const percentage = (mouseDelta / maxDelta) * -100,
+            const percentage = (mouseMove / maxMove) * -100,
                 nextPercentageUnconstrained = parseFloat(blogs.dataset.prevPercentage) + percentage,
                 nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
 

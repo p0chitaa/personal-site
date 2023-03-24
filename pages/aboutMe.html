@@ -52,10 +52,10 @@
         window.onmousemove = e => {
             if(pics.dataset.mouseDownAt === "0") return;
         
-            const mouseDelta = parseFloat(pics.dataset.mouseDownAt) - e.clientX,
-                maxDelta = window.innerWidth / 2;
+            const mouseMove = parseFloat(pics.dataset.mouseDownAt) - e.clientX,
+                maxMove = window.innerWidth / 2;
     
-            const percentage = (mouseDelta / maxDelta) * -100,
+            const percentage = (mouseMove / maxMove) * -100,
                 nextPercentageUnconstrained = parseFloat(pics.dataset.prevPercentage) + percentage,
                 nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
     
