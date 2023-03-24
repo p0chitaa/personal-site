@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/experience.css">
+    <link rel="icon" href="../media/icons/icons8-d-96-edit.png">
     <title>experience</title>
 </head>
 <body>
-    <div id="menu-background-image"></div>
-    <div id="menu-background-pattern"></div>
+    <div id="background-image"></div>
+    <div id="background-pattern"></div>
     <div id="resume-wrapper" data-mouse-down-at="0" data-prev-percentage="0">
         <div class="entry">
             <h2>SECS Teaching Assistant and Tutor</h2>
@@ -95,8 +96,8 @@
     </div>
     <script>
         const blogs = document.getElementById("resume-wrapper");
-        const bgPattern = document.getElementById("menu-background-pattern");
-        const bg = document.getElementById("menu-background-image")
+        const bgPattern = document.getElementById("background-pattern");
+        const bg = document.getElementById("background-image")
 
         window.onmousedown = e => {
             blogs.dataset.mouseDownAt = e.clientY;

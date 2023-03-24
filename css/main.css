@@ -36,23 +36,23 @@ header > p {
     align-items: center;
 }
 
-#menu-items {
+#options {
     margin-left: clamp(4rem, 17vw, 48rem);
     position: relative;
     z-index: 2;
 }
 
-#menu-items:hover > .menu-item {
+#options:hover > .option {
     opacity: 0.3;
 }
 
-#menu-items:hover > .menu-item:hover {
+#options:hover > .option:hover {
     opacity: 1;
 }
 
-.menu-item {
+.option {
     color: rgb(225, 225, 225);
-    font-size: clamp(3rem, 8vw, 4rem);
+    font-size: 4rem;
     /*font-family: "Ibarra Real Nova", serif;*/
     font-family: monospace;
 
@@ -62,7 +62,7 @@ header > p {
     transition: opacity 400ms ease;
 }
 
-#menu-background-pattern {
+#background-pattern {
     height: 100vh;
     width: 100vw;
 
@@ -72,7 +72,7 @@ header > p {
     );*/
     background-image: url(../media/images/inspiration-geometry.png);
     background-position: 0% 0%;
-    background-size: 50vmin 50vmin;
+    background-size: 49vmin 49vmin;
 
     position: absolute;
     left: 0px;
@@ -84,36 +84,36 @@ header > p {
         background-position 800ms ease;
 }
 
-#menu-items:hover ~ #menu-background-pattern {
+#options:hover ~ #background-pattern {
     background-size: 45vmin 45vmin;
     opacity: 0.5;
 }
 
-#menu[data-active-index="0"] > #menu-background-pattern {
+#menu[data-active-index="0"] > #background-pattern {
     background-position: 0% -25%;
 }
 
-#menu[data-active-index="1"] > #menu-background-pattern {
+#menu[data-active-index="1"] > #background-pattern {
     background-position: 0% -50%;
 }
 
-#menu[data-active-index="2"] > #menu-background-pattern {
+#menu[data-active-index="2"] > #background-pattern {
     background-position: 0% -75%;
 }
 
-#menu[data-active-index="3"] > #menu-background-pattern {
+#menu[data-active-index="3"] > #background-pattern {
     background-position: 0% -100%;
 }
 
-#menu[data-active-index="4"] > #menu-background-pattern {
+#menu[data-active-index="4"] > #background-pattern {
     background-position: 0% -125%;
 }
 
-#menu[data-active-index="5"] > #menu-background-pattern {
+#menu[data-active-index="5"] > #background-pattern {
     background-position: 0% -150%;
 }
 
-#menu-background-image {
+#background-image {
     height: 100%;
     width: 100%;
     
@@ -133,31 +133,31 @@ header > p {
         background-position 800ms ease;
 }
 
-#menu-items:hover ~ #menu-background-image {
+#options:hover ~ #background-image {
     background-size: 270vmax;
     opacity: 0.10;
 }
 
-#menu[data-active-index="0"] > #menu-background-image {
+#menu[data-active-index="0"] > #background-image {
     background-position: 0% 70%;
 }
 
-#menu[data-active-index="1"] > #menu-background-image {
+#menu[data-active-index="1"] > #background-image {
     background-position: 0% 75%;
 }
 
-#menu[data-active-index="2"] > #menu-background-image {
+#menu[data-active-index="2"] > #background-image {
     background-position: 0% 80%;
 }
 
-#menu[data-active-index="3"] > #menu-background-image {
+#menu[data-active-index="3"] > #background-image {
     background-position: 0% 85%;
 }
 
-#menu[data-active-index="4"] > #menu-background-image {
+#menu[data-active-index="4"] > #background-image {
     background-position: 0% 90%;
 }
 
-#menu[data-active-index="5"] > #menu-background-image {
+#menu[data-active-index="5"] > #background-image {
     background-position: 0% 95%;
 }

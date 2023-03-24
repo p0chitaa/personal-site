@@ -10,7 +10,7 @@ body {
     padding: 0px;
 }
 
-#menu-background-pattern {
+#background-pattern {
     height: 100vh;
     width: 100vw;
 
@@ -29,7 +29,7 @@ body {
         background-position 800ms ease;
 }
 
-#menu-background-image {
+#background-image {
     height: 100%;
     width: 100%;
     
@@ -59,6 +59,8 @@ body {
     fill: rgb(197, 197, 197);
 }
 
+
+/* partially taken (more like inspired) from this: https://codepen.io/Hyperplexed/pen/MWQeYLW */
 #projects {
     display: flex;
     flex-wrap: wrap;
@@ -147,57 +149,57 @@ body {
     width: 80%;
 }
 
-#projects:hover > #menu-background-pattern {
+#projects:hover > #background-pattern {
     background-size: 40vmin 40vmin;
     opacity: 0.5;
 }
 
-#projects[data-active-index="0"] > #menu-background-pattern {
-    background-position: 0% -25%;
+#projects[data-active-index="0"] > #background-pattern {
+    background-position: -5% -25%;
 }
 
-#projects[data-active-index="1"] > #menu-background-pattern {
-    background-position: -15% -25%;
+#projects[data-active-index="1"] > #background-pattern {
+    background-position: -20% -25%;
 }
 
-#projects[data-active-index="2"] > #menu-background-pattern {
-    background-position: -30% -25%;
+#projects[data-active-index="2"] > #background-pattern {
+    background-position: -35% -25%;
 }
 
-#projects[data-active-index="3"] > #menu-background-pattern {
-    background-position: 0% -50%;
+#projects[data-active-index="3"] > #background-pattern {
+    background-position: -5% -50%;
 }
 
-#projects[data-active-index="4"] > #menu-background-pattern {
-    background-position: -15% -50%;
+#projects[data-active-index="4"] > #background-pattern {
+    background-position: -20% -50%;
 }
 
-#projects[data-active-index="5"] > #menu-background-pattern {
-    background-position: -30% -50%;
+#projects[data-active-index="5"] > #background-pattern {
+    background-position: -35% -50%;
 }
 
 
 
-#projects[data-active-index="0"] > #menu-background-image {
-    background-position: 0% 70%;
-}
-
-#projects[data-active-index="1"] > #menu-background-image {
+#projects[data-active-index="0"] > #background-image {
     background-position: 5% 70%;
 }
 
-#projects[data-active-index="2"] > #menu-background-image {
+#projects[data-active-index="1"] > #background-image {
     background-position: 10% 70%;
 }
 
-#projects[data-active-index="3"] > #menu-background-image {
-    background-position: 0% 80%;
+#projects[data-active-index="2"] > #background-image {
+    background-position: 15% 70%;
 }
 
-#projects[data-active-index="4"] > #menu-background-image {
+#projects[data-active-index="3"] > #background-image {
     background-position: 5% 80%;
 }
 
-#projects[data-active-index="5"] > #menu-background-image {
+#projects[data-active-index="4"] > #background-image {
     background-position: 10% 80%;
+}
+
+#projects[data-active-index="5"] > #background-image {
+    background-position: 15% 80%;
 }

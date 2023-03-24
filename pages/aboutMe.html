@@ -5,10 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/aboutMe.css">
+    <link rel="icon" href="../media/icons/icons8-d-96-edit.png">
     <title>about me</title>
 </head>
 <body>
-    <div id="menu-background-image"></div>
+    <!--quick note about this page, i will fill it up when i get the chance
+    most of the pictures of my other hobbies/things i do are not on my phone 
+    so i gotta find em first!! regardless, you can see how i can just throw more
+    'pics' divs filled with 'pic' img tags to make some more entries here-->
+    
+    <!--also the only reason theres so much snowboarding stuff/mountains stuff is 
+    bc i just got home from a snowboarding trip in colorado like 2 days ago lol.
+    just fresh on my mind-->
+    <div id="background-image"></div>
     <div id="pics" data-mouse-down-at="0" data-prev-percentage="0">
         <div class="pic">
             <h2 id="boarding-header">snowboarding</h2>
@@ -25,10 +34,10 @@
         <img class="pic" src="../media/images/IMG_6854.jpg" draggable="false">
     </div>
     <a href="../index.html" id="link" draggable="false"><img id="arrow" src="../media/images/pnghut_arrows-icon-left-arrow-back-material-property-logo.png"></a>
-    <div id="menu-background-pattern"></div>
+    <div id="background-pattern"></div>
     <script>
-        const bg = document.getElementById("menu-background-image")
-        const bgPattern = document.getElementById("menu-background-pattern");
+        const bg = document.getElementById("background-image")
+        const bgPattern = document.getElementById("background-pattern");
         const pics = document.getElementById("pics");
 
         window.onmousedown = e => {

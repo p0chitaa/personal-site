@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="icon" href="./media/icons/icons8-d-96-edit.png">
     <title>drew bonde</title>
 </head>
 <body>
@@ -13,21 +14,21 @@
         <p>248-909-9977<br>ajbonde@oakland.edu</p>
     </header>
     <div id="menu">
-        <div id="menu-items">
-            <a href="./pages/experience.html" class="menu-item">experience</a>
-            <a href="./pages/projects.html" class="menu-item">projects</a>
-            <a href="./pages/aboutMe.html" class="menu-item">about me</a>
-            <a href="./pages/blog.html" class="menu-item">blog</a>
-            <a href="/" class="menu-item">media</a>
-            <a href="https://github.com/p0chitaa" target="_blank" class="menu-item">github</a>
+        <div id="options">
+            <a href="./pages/experience.html" class="option">experience</a>
+            <a href="./pages/projects.html" class="option">projects</a>
+            <a href="./pages/aboutMe.html" class="option">about me</a>
+            <a href="./pages/blog.html" class="option">blog</a>
+            <!--<a href="/" class="option">media</a>-->
+            <a href="https://github.com/p0chitaa" target="_blank" class="option">github</a>
         </div>
-        <div id="menu-background-pattern"></div>
-        <div id="menu-background-image"></div>
+        <div id="background-pattern"></div>
+        <div id="background-image"></div>
     </div>
     <script>
         const menu = document.getElementById("menu");
     
-        Array.from(document.getElementsByClassName("menu-item"))
+        Array.from(document.getElementsByClassName("option"))
             .forEach((item, index) => {
                 item.onmouseover = () => {
                     menu.dataset.activeIndex = index;
