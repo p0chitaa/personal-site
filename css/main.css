@@ -126,7 +126,7 @@ header > p {
 
     background-position: 0% 65%;
     background-size: 300vmax;
-    opacity: 0.15;
+    opacity: 0.30;
 
     transition: opacity 800ms ease,
         background-size 800ms ease,
@@ -135,7 +135,7 @@ header > p {
 
 #options:hover ~ #background-image {
     background-size: 270vmax;
-    opacity: 0.10;
+    opacity: 0.25;
 }
 
 #menu[data-active-index="0"] > #background-image {
