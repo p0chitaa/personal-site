@@ -18,23 +18,58 @@
     bc i just got home from a snowboarding trip in colorado like 2 days ago lol.
     just fresh on my mind-->
     <div id="background-image"></div>
-    <div id="pics" data-mouse-down-at="0" data-prev-percentage="0">
-        <div class="pic">
-            <h2 id="boarding-header">snowboarding</h2>
-            <p id="boarding">snowboarding is a big hobby of mine. i've been boarding since i was 8 years old, and i try to get out on the hills as much as i can during the winter season. i took these pictures at telluride and purgatory ski resort during my trip to colorado in 2023.</p>
-            <div class="center">
-                <div class="arrow"></div>
+    <div id="wrapper" data-mouse-down-at="0" data-prev-percentage="0">
+        <div id="pics" data-mouse-down-at="0" data-prev-percentage="0">
+            <div class="pic">
+                <h2 id="boarding-header">snowboarding</h2>
+                <p id="boarding">snowboarding is a big hobby of mine. i've been boarding since i was 8 years old, and i try to get out on the hills as much as i can during the winter season. i took these pictures at telluride and purgatory ski resort during my trip to colorado in 2023.</p>
+                <div class="center">
+                    <div class="arrow"></div>
+                </div> 
+                <div class="center-up">
+                    <div class="arrow-up"></div>
+                </div>
             </div>
+            <img class="pic" src="../media/images/IMG_6832.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6763.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6829.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6835.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6837.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6846.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6820.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6851.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6854.jpg" draggable="false">
         </div>
-        <img class="pic" src="../media/images/IMG_6832.jpg" draggable="false">
-        <img class="pic" src="../media/images/IMG_6763.jpg" draggable="false">
-        <img class="pic" src="../media/images/IMG_6829.jpg" draggable="false">
-        <img class="pic" src="../media/images/IMG_6835.jpg" draggable="false">
-        <img class="pic" src="../media/images/IMG_6837.jpg" draggable="false">
-        <img class="pic" src="../media/images/IMG_6846.jpg" draggable="false">
-        <img class="pic" src="../media/images/IMG_6820.jpg" draggable="false">
-        <img class="pic" src="../media/images/IMG_6851.jpg" draggable="false">
-        <img class="pic" src="../media/images/IMG_6854.jpg" draggable="false">
+        <div id="pics2" data-mouse-down-at="0" data-prev-percentage="0">
+            <div class="pic">
+                <h2 id="boarding-header">snowboarding</h2>
+                <p id="boarding">snowboarding is a big hobby of mine. i've been boarding since i was 8 years old, and i try to get out on the hills as much as i can during the winter season. i took these pictures at telluride and purgatory ski resort during my trip to colorado in 2023.</p>
+            </div>
+            <img class="pic" src="../media/images/IMG_6832.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6763.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6829.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6835.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6837.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6846.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6820.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6851.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6854.jpg" draggable="false">
+        </div>
+        <div id="pics3" data-mouse-down-at="0" data-prev-percentage="0">
+            <div class="pic">
+                <h2 id="boarding-header">snowboarding</h2>
+                <p id="boarding">snowboarding is a big hobby of mine. i've been boarding since i was 8 years old, and i try to get out on the hills as much as i can during the winter season. i took these pictures at telluride and purgatory ski resort during my trip to colorado in 2023.</p>
+            </div>
+            <img class="pic" src="../media/images/IMG_6832.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6763.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6829.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6835.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6837.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6846.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6820.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6851.jpg" draggable="false">
+            <img class="pic" src="../media/images/IMG_6854.jpg" draggable="false">
+        </div>
     </div>
     <a href="../index.html" id="link" draggable="false"><img id="arrow" src="../media/images/pnghut_arrows-icon-left-arrow-back-material-property-logo.png"></a>
     <div id="background-pattern"></div>
@@ -42,41 +77,77 @@
         const bg = document.getElementById("background-image")
         const bgPattern = document.getElementById("background-pattern");
         const pics = document.getElementById("pics");
+        const pics2 = document.getElementById("pics2");
+        const pics3 = document.getElementById("pics3");
+        const wrapper = document.getElementById("wrapper");
+        const back = document.getElementById("back-animation");
 
         window.onmousedown = e => {
             pics.dataset.mouseDownAt = e.clientX;
+            wrapper.dataset.mouseDownAt = e.clientY;
         }
 
         window.onmouseup = e => {
             pics.dataset.mouseDownAt = "0";  
             pics.dataset.prevPercentage = pics.dataset.percentage;
+            wrapper.dataset.mouseDownAt = "0";
+            wrapper.dataset.prevPercentage = wrapper.dataset.percentage;
         }
 
         window.onmousemove = e => {
             if(pics.dataset.mouseDownAt === "0") return;
         
-            const mouseMove = parseFloat(pics.dataset.mouseDownAt) - e.clientX,
-                maxMove = window.innerWidth / 2;
+            var mouseMove = parseFloat(pics.dataset.mouseDownAt) - e.clientX,
+                maxMove = window.innerWidth*2;
     
-            const percentage = (mouseMove / maxMove) * -100,
+            let percentage = (mouseMove / maxMove) * -100,
                 nextPercentageUnconstrained = parseFloat(pics.dataset.prevPercentage) + percentage,
                 nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+
+            const wrapperMouseMove = parseFloat(wrapper.dataset.mouseDownAt) - e.clientY,
+                wrapperMaxMove = window.innerHeight / 2;
+
+            const wrapperPercentage = (wrapperMouseMove / wrapperMaxMove) * -100,
+                wrapperNextPercentageUnconstrained = parseFloat(wrapper.dataset.prevPercentage) + wrapperPercentage,
+                wrapperNextPercentage = Math.max(Math.min(wrapperNextPercentageUnconstrained, 0), -300);
     
             pics.dataset.percentage = nextPercentage;
+            wrapper.dataset.percentage = wrapperNextPercentage;
             
             bg.animate({
-                backgroundPosition: `${nextPercentage/2*-1}% 80%`
+                backgroundPosition: `${nextPercentage/3*-1}% ${((wrapperNextPercentage*-1)/10)+80}%`
             }, { duration: 1200, fill: "forwards" });
 
             bgPattern.animate({
-                backgroundPosition: `${nextPercentage}% -75%`
+                backgroundPosition: `${nextPercentage}% ${(wrapperNextPercentage/2)-75}%`
             }, { duration: 1200, fill: "forwards" });
 
             pics.animate({
-                transform: `translate(${nextPercentage}%, -50%)`
+                transform: `translate(${nextPercentage}%, ${(wrapperNextPercentage/1)-50}%)`
             }, { duration: 1200, fill: "forwards" });
+
+            pics2.animate({
+                transform: `translate(${nextPercentage}%, ${(wrapperNextPercentage/1)-75}%)`
+            }, { duration: 1200, fill: "forwards" });
+
+            pics3.animate({
+                transform: `translate(${nextPercentage}%, ${(wrapperNextPercentage/1)+75}%)`
+            }, { duration: 1200, fill: "forwards" });
+
   
             for(const image of pics.getElementsByClassName("pic")) {
+                image.animate({
+                    objectPosition: `${100 + nextPercentage}% center`
+                }, { duration: 1200, fill: "forwards" });
+            }
+
+            for(const image of pics2.getElementsByClassName("pic")) {
+                image.animate({
+                    objectPosition: `${100 + nextPercentage}% center`
+                }, { duration: 1200, fill: "forwards" });
+            }
+
+            for(const image of pics3.getElementsByClassName("pic")) {
                 image.animate({
                     objectPosition: `${100 + nextPercentage}% center`
                 }, { duration: 1200, fill: "forwards" });
