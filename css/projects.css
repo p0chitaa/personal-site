@@ -154,16 +154,20 @@ body {
     opacity: 0.5;
 }
 
+#projects:hover > #background-image {
+    background-size: 250vmax;
+}
+
 #projects[data-active-index="0"] > #background-pattern {
     background-position: -5% -25%;
 }
 
 #projects[data-active-index="1"] > #background-pattern {
-    background-position: -20% -25%;
+    background-position: -15% -25%;
 }
 
 #projects[data-active-index="2"] > #background-pattern {
-    background-position: -35% -25%;
+    background-position: -25% -25%;
 }
 
 #projects[data-active-index="3"] > #background-pattern {
@@ -171,35 +175,35 @@ body {
 }
 
 #projects[data-active-index="4"] > #background-pattern {
-    background-position: -20% -50%;
+    background-position: -15% -50%;
 }
 
 #projects[data-active-index="5"] > #background-pattern {
-    background-position: -35% -50%;
+    background-position: -25% -50%;
 }
 
 
 
 #projects[data-active-index="0"] > #background-image {
-    background-position: 5% 70%;
+    background-position: 2.5% 70%;
 }
 
 #projects[data-active-index="1"] > #background-image {
-    background-position: 10% 70%;
+    background-position: 5% 70%;
 }
 
 #projects[data-active-index="2"] > #background-image {
-    background-position: 15% 70%;
+    background-position: 7.5% 70%;
 }
 
 #projects[data-active-index="3"] > #background-image {
-    background-position: 5% 80%;
+    background-position: 2.5% 80%;
 }
 
 #projects[data-active-index="4"] > #background-image {
-    background-position: 10% 80%;
+    background-position: 5% 80%;
 }
 
 #projects[data-active-index="5"] > #background-image {
-    background-position: 15% 80%;
+    background-position: 7.5% 80%;
 }
