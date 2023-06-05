@@ -28,6 +28,7 @@
     <script>
         const menu = document.getElementById("menu");
         const header = document.getElementById("header");
+        const options = document.getElementById("options");
     
         Array.from(document.getElementsByClassName("option"))
             .forEach((item, index) => {
@@ -38,7 +39,7 @@
 
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
             header.style.display = "none";
-            menu.style.display = "none";
+            options.style.display = "none";
         }
     </script>
 </body>
