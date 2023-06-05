@@ -11,7 +11,7 @@
 <body>
     <header id="header">
         drew bonde
-        <p>248-909-9977<br>ajbonde@oakland.edu<br><br>mobile support in progress! please view on a desktop computer for now.</p>
+        <p>248-909-9977<br>ajbonde@oakland.edu</p>
     </header>
     <div id="menu">
         <div id="options">
@@ -25,11 +25,17 @@
         <div id="background-pattern"></div>
         <div id="background-image"></div>
     </div>
+    <div id="mobile-warning" style="display:none">
+        <p>
+            mobile support in progress! please view on a desktop computer for now :))
+        </p>
+    </div>
     <script>
         const menu = document.getElementById("menu");
         const header = document.getElementById("header");
         const options = document.getElementById("options");
         const backgroundImage = document.getElementById("background-image");
+        const warning = document.getElementById("mobile-warning");
     
         Array.from(document.getElementsByClassName("option"))
             .forEach((item, index) => {
@@ -41,9 +47,8 @@
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
             header.style.display = "none";
             options.style.display = "none";
-            //backgroundImage.style.backgroundPosition = "0% 0%";
             backgroundImage.style.backgroundSize = "cover";
-            //backgroundImage.style.objectFit = "cover";
+            warning.style.display = "block"
         }
     </script>
 </body>
