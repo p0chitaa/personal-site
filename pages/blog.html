@@ -86,16 +86,16 @@
         const bgPattern = document.getElementById("background-pattern");
         const bg = document.getElementById("background-image")
 
-        window.onmousedown = e => {
+        const handleOnDown = e => {
             blogs.dataset.mouseDownAt = e.clientY;
         }
         
-        window.onmouseup = () => {
+        const handleOnUp = () => {
             blogs.dataset.mouseDownAt = "0";
             blogs.dataset.prevPercentage = blogs.dataset.percentage;
         }
 
-        window.onmousemove = e => {
+        const handleOnMove = e => {
             if(blogs.dataset.mouseDownAt === "0") return;
             const mouseMove = parseFloat(blogs.dataset.mouseDownAt) - e.clientY,
                 maxMove = window.innerHeight / 2;
@@ -118,6 +118,18 @@
                 backgroundPosition: `0% ${85 + (nextPercentage*-1)/4}%`
             }, { duration: 1200, fill: "forwards" });
         }
+
+        window.onmousedown = e => handleOnDown(e);
+
+        window.ontouchstart = e => handleOnDown(e.touches[0]);
+
+        window.onmouseup = e => handleOnUp(e);
+
+        window.ontouchend = e => handleOnUp(e.touches[0]);
+
+        window.onmousemove = e => handleOnMove(e);
+
+        window.ontouchmove = e => handleOnMove(e.touches[0]);
     </script>
 </body>
 </html>
