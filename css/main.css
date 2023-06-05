@@ -133,6 +133,19 @@ header > p {
         background-position 800ms ease;
 }
 
+#mobile-warning {
+    color: rgb(190, 190, 190);
+    font-size: 1.8rem;
+    /*font-family: "Ibarra Real Nova", serif;*/
+    font-family: monospace;
+    position: absolute;
+    top: 20%;
+    /*left: 5%;*/
+    text-decoration: none;
+    padding: 5rem;
+    transition: opacity 400ms ease;
+}
+
 #options:hover ~ #background-image {
     background-size: 270vmax;
     opacity: 0.25;

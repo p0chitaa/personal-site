@@ -90,19 +90,19 @@
         const wrapper = document.getElementById("wrapper");
         const back = document.getElementById("back-animation");
 
-        window.onmousedown = e => {
+        const handleOnDown = e => {
             pics.dataset.mouseDownAt = e.clientX;
             wrapper.dataset.mouseDownAt = e.clientY;
         }
 
-        window.onmouseup = e => {
+        const handleOnUp = e => {
             pics.dataset.mouseDownAt = "0";  
             pics.dataset.prevPercentage = pics.dataset.percentage;
             wrapper.dataset.mouseDownAt = "0";
             wrapper.dataset.prevPercentage = wrapper.dataset.percentage;
         }
 
-        window.onmousemove = e => {
+        const handleOnMove = e => {
             if(pics.dataset.mouseDownAt === "0") return;
         
             var mouseMove = parseFloat(pics.dataset.mouseDownAt) - e.clientX,
@@ -161,6 +161,18 @@
                 }, { duration: 1200, fill: "forwards" });
             }
         }
+
+        window.onmousedown = e => handleOnDown(e);
+
+        window.ontouchstart = e => handleOnDown(e.touches[0]);
+            
+        window.onmouseup = e => handleOnUp(e);
+            
+        window.ontouchend = e => handleOnUp(e.touches[0]);
+            
+        window.onmousemove = e => handleOnMove(e);
+            
+        window.ontouchmove = e => handleOnMove(e.touches[0]);
     </script>
 </body>
 </html>
