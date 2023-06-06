@@ -113,14 +113,14 @@
             const mouseMove = parseFloat(blogs.dataset.mouseDownAt) - e.clientY,
                 maxMove = window.innerHeight / 2;
 
-            const percentage = (mouseMove / maxMove) * -100,
+            const percentage = (mouseMove / maxMove) * -30,
                 nextPercentageUnconstrained = parseFloat(blogs.dataset.prevPercentage) + percentage,
                 nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
 
             blogs.dataset.percentage = nextPercentage;
             
             blogs.animate({
-                transform: `translate(0%, ${nextPercentage/1.5}%)`
+                transform: `translate(0%, ${nextPercentage/1.25}%)`
             }, { duration: 1200, fill: "forwards" });
 
             bgPattern.animate({

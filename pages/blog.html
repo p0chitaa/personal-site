@@ -102,14 +102,14 @@
             const mouseMove = parseFloat(blogs.dataset.mouseDownAt) - e.clientY,
                 maxMove = window.innerHeight / 2;
 
-            const percentage = (mouseMove / maxMove) * -100,
+            const percentage = (mouseMove / maxMove) * -50,
                 nextPercentageUnconstrained = parseFloat(blogs.dataset.prevPercentage) + percentage,
                 nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
 
             blogs.dataset.percentage = nextPercentage;
             
             blogs.animate({
-                transform: `translate(0%, ${nextPercentage/1.5}%)`
+                transform: `translate(0%, ${nextPercentage/1.3}%)`
             }, { duration: 1200, fill: "forwards" });
 
             bgPattern.animate({
@@ -140,7 +140,7 @@
             const h5 = document.getElementsByTagName("h5");
             arrowWrap.style.display = "none";
             bg.style.backgroundSize = "cover";
-            wrapper.style.left = "10.5%";
+            wrapper.style.left = "11%";
             for(let i = 0; i < h2.length; i++) {
                 h2[i].style.fontSize = "1.75rem";
             }
