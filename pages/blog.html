@@ -82,7 +82,9 @@
             <div class="arrow"></div>
         </div>
     </div>
-    <div id="background-pattern"></div>
+    <div id="background-stuff">
+        <div id="background-pattern"></div>
+    </div>
     <script>
         window.onmousedown = e => handleOnDown(e);
 
@@ -121,17 +123,17 @@
             blogs.dataset.percentage = nextPercentage;
             
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-                blogs.animate({
+                /*blogs.animate({
                     transform: `translate(0%, ${nextPercentage/1.3}%)`
-                }, { duration: 0, fill: "forwards" });
+                }, { duration: 100, fill: "forwards" });*/
 
                 bgPattern.animate({
                     backgroundPosition: `0% ${-100 + nextPercentage/2}%`
-                }, { duration: 400, fill: "forwards" });
+                }, { duration: 800, fill: "forwards" });
 
                 bg.animate({
                     backgroundPosition: `0% ${85 + (nextPercentage*-1)/4}%`
-                }, { duration: 400, fill: "forwards" });
+                }, { duration: 800, fill: "forwards" });
             } else {
                 blogs.animate({
                     transform: `translate(0%, ${nextPercentage/1.3}%)`
@@ -150,11 +152,16 @@
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
             const wrapper = document.getElementById("blog-wrapper");
             const arrowWrap = document.getElementById("arrow-wrap");
+            const bgStuff = document.getElementById("background-stuff");
             const back = document.getElementById("arrow");
             const h2 = document.getElementsByTagName("h2");
             const h5 = document.getElementsByTagName("h5");
+            const body = document.querySelector("body");
+            bgStuff.style.position = "fixed";
             arrowWrap.style.display = "none";
             bg.style.backgroundSize = "cover";
+            bg.style.position = "fixed";
+            body.style.overflow = "auto";
             wrapper.style.left = "11%";
             wrapper.style.top = "11%";
             back.style.left = "3%";
