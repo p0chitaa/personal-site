@@ -9,7 +9,10 @@
     <title>blog</title>
 </head>
 <body>
-    <div id="background-image"></div>
+    <div id="background-stuff">
+        <div id="background-image"></div>
+        <div id="background-pattern"></div>
+    </div>
     <div id="blog-wrapper" data-mouse-down-at="0" data-prev-percentage="0">
         <div class="entry">
             <h2>finally filled out the <a href="./aboutMe.html">about me</a> page with something other than my placeholder pics!</h2>
@@ -82,9 +85,6 @@
             <div class="arrow"></div>
         </div>
     </div>
-    <div id="background-stuff">
-        <div id="background-pattern"></div>
-    </div>
     <script>
         window.onmousedown = e => handleOnDown(e);
 
@@ -131,9 +131,9 @@
                     backgroundPosition: `0% ${-100 + nextPercentage/1}%`
                 }, { duration: 4000, fill: "forwards" });
 
-                /*bg.animate({
-                    backgroundPosition: `0% ${85 + (nextPercentage*-1)/4}%`
-                }, { duration: 800, fill: "forwards" });*/
+                bg.animate({
+                    backgroundPosition: `0% ${0 + (nextPercentage*-1)/2.5}%`
+                }, { duration: 4000, fill: "forwards" });
             } else {
                 blogs.animate({
                     transform: `translate(0%, ${nextPercentage/1.3}%)`
@@ -161,11 +161,13 @@
             
             bgStuff.style.position = "fixed";
             arrowWrap.style.display = "none";
-            bg.style.backgroundSize = "421lvh";
+            bg.style.backgroundSize = "600vmax";
             bg.style.backgroundRepeat = "no-repeat";
+            bg.style.backgroundPosition = "0% 0%";
+            bg.style.overflowY = "visible";
             bg.style.position = "fixed";
             body.style.overflow = "auto";
-            //body.style.webkitOverflowScrolling = 'touch';
+            body.style.webkitOverflowScrolling = 'touch';
             //body.style.paddingBottom = "env(safe-area-inset-bottom)";
             wrapper.style.left = "11%";
             wrapper.style.top = "11%";
