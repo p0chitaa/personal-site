@@ -68,7 +68,7 @@
         <div class="entry">
             <h2>ICT Intern</h2>
             <h5>NORMA Group, Auburn Hills, MI<br>June 2019–August 2019</h5>
-            <p id="responsible">Directly assisted the IT team with a wide range of duties and projects:</p>
+            <p id="assisted">Directly assisted the IT team with a wide range of duties and projects:</p>
             <ul>
                 <li>
                     <p>In charge of checking for Helpdesk tickets and solving them as quickly 
@@ -80,7 +80,7 @@
                 </li>
             </ul>
         </div>
-        <div class="entry">
+        <div class="entry" style="margin-bottom: 50px">
             <h2>Career Objective</h2>
             <p>Seeking a computer science related position; bringing both professional 
             programming and corporate internship experience, great communication and 
@@ -91,46 +91,12 @@
         </div>
     </div>
     <a href="../index.html" id="link" draggable="false"><img id="arrow" src="../media/images/pnghut_arrows-icon-left-arrow-back-material-property-logo.png"></a>
-    <div class="center">
-        <div class="arrow"></div>
+    <div id="arrow-wrap">
+        <div class="center">
+            <div class="arrow"></div>
+        </div>
     </div>
     <script>
-        const blogs = document.getElementById("resume-wrapper");
-        const bgPattern = document.getElementById("background-pattern");
-        const bg = document.getElementById("background-image")
-
-        const handleOnDown = e => {
-            blogs.dataset.mouseDownAt = e.clientY;
-        }
-        
-        const handleOnUp = () => {
-            blogs.dataset.mouseDownAt = "0";
-            blogs.dataset.prevPercentage = blogs.dataset.percentage;
-        }
-
-        const handleOnMove = e => {
-            if(blogs.dataset.mouseDownAt === "0") return;
-            const mouseMove = parseFloat(blogs.dataset.mouseDownAt) - e.clientY,
-                maxMove = window.innerHeight / 2;
-
-            const percentage = (mouseMove / maxMove) * -30,
-                nextPercentageUnconstrained = parseFloat(blogs.dataset.prevPercentage) + percentage,
-                nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
-
-            blogs.dataset.percentage = nextPercentage;
-            
-            blogs.animate({
-                transform: `translate(0%, ${nextPercentage/1.25}%)`
-            }, { duration: 1200, fill: "forwards" });
-
-            bgPattern.animate({
-                backgroundPosition: `0% ${-25 + nextPercentage/2}%`
-            }, { duration: 1200, fill: "forwards" });
-
-            bg.animate({
-                backgroundPosition: `0% ${70 + (nextPercentage*-1)/4}%`
-            }, { duration: 1200, fill: "forwards" });
-        }
         window.onmousedown = e => handleOnDown(e);
 
         window.ontouchstart = e => handleOnDown(e.touches[0]);
@@ -142,6 +108,95 @@
         window.onmousemove = e => handleOnMove(e);
 
         window.ontouchmove = e => handleOnMove(e.touches[0]);
+
+        const blogs = document.getElementById("resume-wrapper");
+        const bgPattern = document.getElementById("background-pattern");
+        const bg = document.getElementById("background-image")
+
+        const handleOnDown = e => {
+            blogs.dataset.mouseDownAt = e.clientY;
+        }
+
+        const handleOnUp = () => {
+            blogs.dataset.mouseDownAt = "0";
+            blogs.dataset.prevPercentage = blogs.dataset.percentage;
+        }
+
+        const handleOnMove = e => {
+            if(blogs.dataset.mouseDownAt === "0") return;
+            const mouseMove = parseFloat(blogs.dataset.mouseDownAt) - e.clientY,
+                maxMove = window.innerHeight / 2;
+        
+            const percentage = (mouseMove / maxMove) * -30,
+                nextPercentageUnconstrained = parseFloat(blogs.dataset.prevPercentage) + percentage,
+                nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+        
+            blogs.dataset.percentage = nextPercentage;
+
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+                /*blogs.animate({
+                    transform: `translate(0%, ${nextPercentage/1.3}%)`
+                }, { duration: 100, fill: "forwards" });*/
+            
+                bgPattern.animate({
+                    backgroundPosition: `0% ${-25 + nextPercentage/1}%`
+                }, { duration: 4000, fill: "forwards" });
+            
+                bg.animate({
+                    backgroundPosition: `0% ${0 + (nextPercentage*-1)/2.5}%`
+                }, { duration: 4000, fill: "forwards" });
+            } else {
+                blogs.animate({
+                    transform: `translate(0%, ${nextPercentage/1.3}%)`
+                }, { duration: 1200, fill: "forwards" });
+            
+                bgPattern.animate({
+                    backgroundPosition: `0% ${-25 + nextPercentage/2}%`
+                }, { duration: 1200, fill: "forwards" });
+            
+                bg.animate({
+                    backgroundPosition: `0% ${70 + (nextPercentage*-1)/4}%`
+                }, { duration: 1200, fill: "forwards" });
+            }
+        }
+
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+            const arrowWrap = document.getElementById("arrow-wrap");
+            const arrow = document.getElementById("arrow");
+            const back = document.getElementById("arrow");
+            const h2 = document.getElementsByTagName("h2");
+            const h5 = document.getElementsByTagName("h5");
+            const body = document.querySelector("body");
+            const responsible = document.getElementById("responsible");
+            const assisted = document.getElementById("assisted");
+
+            bgPattern.style.position = "fixed";
+            arrowWrap.style.display = "none";
+            arrow.style.top = "11%";
+            bg.style.backgroundSize = "600vmax";
+            bg.style.backgroundRepeat = "no-repeat";
+            bg.style.backgroundPosition = "0% 0%";
+            bg.style.overflowY = "visible";
+            bg.style.position = "fixed";
+            body.style.overflow = "auto";
+            body.style.webkitOverflowScrolling = 'touch';
+            blogs.style.left = "11%";
+            blogs.style.top = "11%";
+            blogs.style.gap = "7vmin";
+            back.style.left = "3%";
+            responsible.style.marginTop = "7%";
+            responsible.style.marginBottom = "-2%";
+            assisted.style.marginTop = "7%";
+            assisted.style.marginBottom = "-2%";
+        
+            for(let i = 0; i < h2.length; i++) {
+                h2[i].style.fontSize = "1.75rem";
+            }
+            for(let i = 0; i < h5.length; i++) {
+                h5[i].style.fontSize = "1rem";
+                h5[i].style.marginBottom = "-4%";
+            }
+        }
     </script>
 </body>
 </html>

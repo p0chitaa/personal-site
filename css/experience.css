@@ -71,6 +71,10 @@ ul {
     margin-bottom: -1%;
 }
 
+#assisted {
+    margin-bottom: -1%;
+}
+
 .entry {
     display: flex;
     flex-flow: column;
