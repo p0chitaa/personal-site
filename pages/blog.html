@@ -157,14 +157,17 @@
             const h2 = document.getElementsByTagName("h2");
             const h5 = document.getElementsByTagName("h5");
             const body = document.querySelector("body");
+            
             bgStuff.style.position = "fixed";
             arrowWrap.style.display = "none";
             bg.style.backgroundSize = "cover";
             bg.style.position = "fixed";
             body.style.overflow = "auto";
+            body.style.webkitOverflowScrolling = 'touch';
             wrapper.style.left = "11%";
             wrapper.style.top = "11%";
             back.style.left = "3%";
+
             for(let i = 0; i < h2.length; i++) {
                 h2[i].style.fontSize = "1.75rem";
             }
