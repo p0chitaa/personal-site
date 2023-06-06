@@ -31,8 +31,8 @@
                 <div class="border"></div>
                 <div class="info" id="html">
                     <img src="../media/images/PngItem_3900265.png" style="top:20%;left:31.5%">
-                    <h1>this source code!</h1>
-                    <p>links to the github repository containing the source code for this very site!</p>
+                    <h1 style="margin-left: -3px">this source code!</h1>
+                    <p style="margin-left: -3px">link to the github repository containing the source code for this very site!</p>
                 </div>
             </div>
         </a>
@@ -83,6 +83,32 @@
                     menu.dataset.activeIndex = index;
                 }
             });
+        
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+            const head = document.getElementsByClassName("project");
+            const projectWrapper = document.getElementById("projects");
+            const bg = document.getElementById("background-image");
+            const h1 = document.querySelectorAll("h1");
+            const p = document.querySelectorAll("p");
+
+            projectWrapper.style.display = "flex";
+            projectWrapper.style.justifyContent = "center";
+            bg.style.backgroundSize = "600vmax";
+            bg.style.backgroundPosition = "0% 0%";
+
+            for (let i = 0; i < head.length; i++) {
+                head[i].style.height = "170px";
+                head[i].style.width = "170px";
+            }
+
+            for (let i = 0; i < h1.length; i++) {
+                h1[i].style.fontSize = "1rem";
+            }
+
+            for (let i = 0; i < p.length; i++) {
+                p[i].style.fontSize = "0.5rem";
+            }
+        }    
     </script>
 </body>
 </html>
