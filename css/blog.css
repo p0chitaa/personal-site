@@ -74,7 +74,7 @@ a {
     user-select: none;
 }
 
-.entry > h2 {
+h2 {
     /*position: absolute;
     left: 20%;
     top: 25%;
@@ -87,7 +87,7 @@ a {
     margin-bottom: 1%;
 }
 
-.entry > h5 {
+h5 {
     /*position: absolute;
     left: 20%;
     top: 30%;
@@ -100,7 +100,7 @@ a {
     margin-bottom: 1%;
 }
 
-.entry > p {
+p {
     color: rgb(197, 197, 197);
     /*position: absolute;
     left: 20%;
