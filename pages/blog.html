@@ -102,7 +102,7 @@
             const mouseMove = parseFloat(blogs.dataset.mouseDownAt) - e.clientY,
                 maxMove = window.innerHeight / 2;
 
-            const percentage = (mouseMove / maxMove) * -50,
+            const percentage = (mouseMove / maxMove) * -30,
                 nextPercentageUnconstrained = parseFloat(blogs.dataset.prevPercentage) + percentage,
                 nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
 
