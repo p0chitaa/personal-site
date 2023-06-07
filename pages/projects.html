@@ -32,7 +32,7 @@
                 <div class="info" id="html">
                     <img src="../media/images/PngItem_3900265.png" style="top:20%;left:31.5%">
                     <h1 style="margin-left: -3px">this source code!</h1>
-                    <p style="margin-left: -3px">link to the github repository containing the source code for this very site!</p>
+                    <p style="margin-left: -3px">link to the github repository containing the source code for this very site! feel free to make an issue on my repo!</p>
                 </div>
             </div>
         </a>
@@ -90,11 +90,13 @@
             const bg = document.getElementById("background-image");
             const h1 = document.querySelectorAll("h1");
             const p = document.querySelectorAll("p");
+            const arrow = document.getElementById("arrow");
 
             projectWrapper.style.display = "flex";
             projectWrapper.style.justifyContent = "center";
             bg.style.backgroundSize = "600vmax";
             bg.style.backgroundPosition = "0% 0%";
+            arrow.style.display = "none";
 
             for (let i = 0; i < head.length; i++) {
                 head[i].style.height = "170px";

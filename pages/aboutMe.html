@@ -82,13 +82,24 @@
     <a href="../index.html" id="link" draggable="false"><img id="arrow" src="../media/images/pnghut_arrows-icon-left-arrow-back-material-property-logo.png"></a>
     <div id="background-pattern"></div>
     <script>
+        window.onmousedown = e => handleOnDown(e);
+
+        window.ontouchstart = e => handleOnDown(e.touches[0]);
+            
+        window.onmouseup = e => handleOnUp(e);
+            
+        window.ontouchend = e => handleOnUp(e.touches[0]);
+            
+        window.onmousemove = e => handleOnMove(e);
+            
+        window.ontouchmove = e => handleOnMove(e.touches[0]);
+
         const bg = document.getElementById("background-image")
         const bgPattern = document.getElementById("background-pattern");
         const pics = document.getElementById("pics");
         const pics2 = document.getElementById("pics2");
         const pics3 = document.getElementById("pics3");
         const wrapper = document.getElementById("wrapper");
-        const back = document.getElementById("back-animation");
 
         const handleOnDown = e => {
             pics.dataset.mouseDownAt = e.clientX;
@@ -115,32 +126,65 @@
             const wrapperMouseMove = parseFloat(wrapper.dataset.mouseDownAt) - e.clientY,
                 wrapperMaxMove = window.innerHeight / 2;
 
-            const wrapperPercentage = (wrapperMouseMove / wrapperMaxMove) * -100,
-                wrapperNextPercentageUnconstrained = parseFloat(wrapper.dataset.prevPercentage) + wrapperPercentage,
-                wrapperNextPercentage = Math.max(Math.min(wrapperNextPercentageUnconstrained, 0), -300);
-    
-            pics.dataset.percentage = nextPercentage;
-            wrapper.dataset.percentage = wrapperNextPercentage;
             
-            bg.animate({
-                backgroundPosition: `${nextPercentage/3*-1}% ${((wrapperNextPercentage*-1)/10)+80}%`
-            }, { duration: 1200, fill: "forwards" });
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+                let percentage = (mouseMove / maxMove) * -40,
+                    nextPercentageUnconstrained = parseFloat(pics.dataset.prevPercentage) + percentage,
+                    nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -50);
+                const wrapperPercentage = (wrapperMouseMove / wrapperMaxMove) * -70,
+                    wrapperNextPercentageUnconstrained = parseFloat(wrapper.dataset.prevPercentage) + wrapperPercentage,
+                    wrapperNextPercentage = Math.max(Math.min(wrapperNextPercentageUnconstrained, 0), -150);
+    
+                pics.dataset.percentage = nextPercentage;
+                wrapper.dataset.percentage = wrapperNextPercentage;
+                
+                bg.animate({
+                    backgroundPosition: `${nextPercentage/3*-1}% ${((wrapperNextPercentage*-1)/10)}%`
+                }, { duration: 1200, fill: "forwards" });
+            
+                bgPattern.animate({
+                    backgroundPosition: `${nextPercentage}% ${(wrapperNextPercentage/2)-75}%`
+                }, { duration: 1200, fill: "forwards" });
 
-            bgPattern.animate({
-                backgroundPosition: `${nextPercentage}% ${(wrapperNextPercentage/2)-75}%`
-            }, { duration: 1200, fill: "forwards" });
+                pics.animate({
+                    transform: `translate(${nextPercentage*2}%, ${(wrapperNextPercentage*2)}%)`
+                }, { duration: 400, fill: "forwards" });
 
-            pics.animate({
-                transform: `translate(${nextPercentage}%, ${(wrapperNextPercentage/1)-50}%)`
-            }, { duration: 1200, fill: "forwards" });
+                pics2.animate({
+                    transform: `translate(${nextPercentage*2}%, ${(wrapperNextPercentage*2)}%)`
+                }, { duration: 400, fill: "forwards" });
 
-            pics2.animate({
-                transform: `translate(${nextPercentage}%, ${(wrapperNextPercentage/1)-75}%)`
-            }, { duration: 1200, fill: "forwards" });
+                pics3.animate({
+                    transform: `translate(${nextPercentage*2}%, ${(wrapperNextPercentage*2)}%)`
+                }, { duration: 400, fill: "forwards" });
+            } else {
+                const wrapperPercentage = (wrapperMouseMove / wrapperMaxMove) * -100,
+                    wrapperNextPercentageUnconstrained = parseFloat(wrapper.dataset.prevPercentage) + wrapperPercentage,
+                    wrapperNextPercentage = Math.max(Math.min(wrapperNextPercentageUnconstrained, 0), -300);
+    
+                pics.dataset.percentage = nextPercentage;
+                wrapper.dataset.percentage = wrapperNextPercentage;
+                
+                bg.animate({
+                    backgroundPosition: `${nextPercentage/3*-1}% ${((wrapperNextPercentage*-1)/10)+80}%`
+                }, { duration: 1200, fill: "forwards" });
 
-            pics3.animate({
-                transform: `translate(${nextPercentage}%, ${(wrapperNextPercentage/1)+75}%)`
-            }, { duration: 1200, fill: "forwards" });
+                bgPattern.animate({
+                    backgroundPosition: `${nextPercentage}% ${(wrapperNextPercentage/5)-75}%`
+                }, { duration: 1200, fill: "forwards" });
+
+                pics.animate({
+                    transform: `translate(${nextPercentage}%, ${(wrapperNextPercentage/1)}%)`
+                }, { duration: 1200, fill: "forwards" });
+
+                pics2.animate({
+                    transform: `translate(${nextPercentage}%, ${(wrapperNextPercentage/1)}%)`
+                }, { duration: 1200, fill: "forwards" });
+
+                pics3.animate({
+                    transform: `translate(${nextPercentage}%, ${(wrapperNextPercentage/1)}%)`
+                }, { duration: 1200, fill: "forwards" });
+            }
 
   
             for(const image of pics.getElementsByClassName("pic")) {
@@ -162,17 +206,57 @@
             }
         }
 
-        window.onmousedown = e => handleOnDown(e);
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+            const headers = document.querySelectorAll("h2");
+            const p = document.querySelectorAll("p");
+            const picCards = document.getElementsByClassName("pic");
+            const arrow = document.getElementById("arrow");
 
-        window.ontouchstart = e => handleOnDown(e.touches[0]);
+            if (window.innerHeight > window.innerWidth) {
+                pics2.style.top = "95%";
+                pics3.style.top = "180%";
+            } else {
+                pics2.style.top = "120%";
+                pics3.style.top = "230%";
+            }
             
-        window.onmouseup = e => handleOnUp(e);
+            window.addEventListener("resize", function() {
+                // Announce the new orientation number
+                //alert(window.orientation);
+                if (window.innerHeight > window.innerWidth) {
+                    pics2.style.top = "95%";
+                    pics3.style.top = "180%";
+                } else {
+                    pics2.style.top = "120%";
+                    pics3.style.top = "230%";
+                }
+            }, false);
             
-        window.ontouchend = e => handleOnUp(e.touches[0]);
-            
-        window.onmousemove = e => handleOnMove(e);
-            
-        window.ontouchmove = e => handleOnMove(e.touches[0]);
+            bg.style.backgroundSize = "600vmax";
+            //bg.style.backgroundRepeat = "no-repeat";
+            arrow.style.display = "none"
+            wrapper.style.left = "15%";
+            wrapper.style.top = "10%";
+            bg.style.backgroundPosition = "0% 0%";
+            pics.style.position = "fixed";
+            pics.style.paddingBottom = "0%";
+            pics2.style.position = "fixed";
+            pics2.style.paddingBottom = "0%";
+            pics3.style.position = "fixed";
+            pics3.style.paddingBottom = "0%";
+
+            for (let i = 0; i < picCards.length; i++) {
+                picCards[i].style.width = "72vmin";
+                picCards[i].style.height = "100.8vmin";
+            }
+            for (let i = 0; i < headers.length; i++) {
+                headers[i].style.fontSize = "1.5rem";
+            }
+
+            for (let i = 0; i < p.length; i++) {
+                p[i].style.fontSize = "0.75rem";
+            }
+        }    
     </script>
 </body>
 </html>
