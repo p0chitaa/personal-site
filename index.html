@@ -49,22 +49,64 @@
             const optionsWrapper = document.getElementById("options");
             const options = document.getElementsByClassName("option");
             const bgPattern = document.getElementById("background-pattern");
+
             backgroundImage.style.backgroundSize = "600vmax";
             backgroundImage.style.backgroundPosition = "0% 0%";
-
-            header.style.fontSize = "1.5rem";
-            header.style.top = "10%";
-            info.style.fontSize = "1rem";
-            info.style.marginTop = "10px"
             backgroundImage.style.backgroundSize = "600vmax";
             backgroundImage.style.backgroundPosition = "0% 0%";
             //bgPattern.style.backgroundPosition = "0% -100%";
 
-            for (let i = 0; i < options.length; i++) {
-                options[i].style.fontSize = "2.5rem";
-                options[i].style.paddingTop = "10px";
-                options[i].style.paddingBottom = "10px";
+            if (window.innerHeight > window.innerWidth) {
+                for (let i = 0; i < options.length; i++) {
+                    options[i].style.fontSize = "2.5rem";
+                    options[i].style.paddingTop = "10px";
+                    options[i].style.paddingBottom = "10px";
+                    header.style.fontSize = "1.5rem";
+                    header.style.top = "10%";
+                    info.style.fontSize = "1rem";
+                    info.style.marginTop = "10px"
+                }
+            } else {
+                for (let i = 0; i < options.length; i++) {
+                    options[i].style.fontSize = "1.75rem";
+                    options[i].style.paddingTop = "10px";
+                    options[i].style.paddingBottom = "10px";
+                    header.style.fontSize = "1rem";
+                    header.style.top = "3%";
+                    header.style.left = "3%";
+                    info.style.fontSize = "0.8rem";
+                    info.style.marginTop = "6px"
+                }
             }
+            
+            window.addEventListener("resize", function() {
+                // Announce the new orientation number
+                //alert(window.orientation);
+                if (window.innerHeight > window.innerWidth) {
+                    for (let i = 0; i < options.length; i++) {
+                        options[i].style.fontSize = "2.5rem";
+                        options[i].style.paddingTop = "10px";
+                        options[i].style.paddingBottom = "10px";
+                        header.style.fontSize = "1.5rem";
+                        header.style.top = "10%";
+                        info.style.fontSize = "1rem";
+                        info.style.marginTop = "10px"
+                    }
+                } else {
+                    for (let i = 0; i < options.length; i++) {
+                        options[i].style.fontSize = "1.75rem";
+                        options[i].style.paddingTop = "10px";
+                        options[i].style.paddingBottom = "10px";
+                        header.style.fontSize = "1rem";
+                        header.style.top = "3%";
+                        header.style.left = "3%";
+                        info.style.fontSize = "0.8rem";
+                        info.style.marginTop = "6px"
+                    }
+                }
+            }, false);
+
+            
 
             //const warning = document.getElementById("mobile-warning");
 
