@@ -4,25 +4,30 @@ body {
     background-color: rgb(19, 19, 19);
     margin: 0rem;
     overflow: hidden;
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 #pics > .pic {
-    width: 40vmin;
-    height: 56vmin;
+    width: 48vmin;
+    height: 67.2vmin;
     object-fit: cover;
     object-position: 100% 50%;
 }
 
 #pics2 > .pic {
-    width: 40vmin;
-    height: 56vmin;
+    width: 48vmin;
+    height: 67.2vmin;
     object-fit: cover;
     object-position: 100% 50%;
 }
 
 #pics3 > .pic {
-    width: 40vmin;
-    height: 56vmin;
+    width: 48vmin;
+    height: 67.2vmin;
     object-fit: cover;
     object-position: 100% 50%;
 }
@@ -63,14 +68,6 @@ body {
 #wrapper {
     display: flex;
     flex-direction: column;
-}
-
-img {
-    -khtml-user-select: none;
-    -o-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
 }
 
 #background-pattern {
@@ -117,22 +114,12 @@ img {
     color: rgb(197, 197, 197);
     font-family: monospace;
     font-size: 2.5rem;
-    -khtml-user-select: none;
-    -o-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
 }
 
 #boarding {
     color: rgb(197, 197, 197);
     font-family: monospace;   
-    font-size: 1.25rem;
-    -khtml-user-select: none;
-    -o-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
+    font-size: 0.9rem;
 }
 
 /* arrow animation taken from https://gscode.in/css-scroll-down-arrows-animation/ */
