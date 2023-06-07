@@ -32,7 +32,7 @@
                 <div class="info" id="html">
                     <img src="../media/images/PngItem_3900265.png" style="top:20%;left:31.5%">
                     <h1 style="margin-left: -3px">this source code!</h1>
-                    <p style="margin-left: -3px">link to the github repository containing the source code for this very site! feel free to make an issue on my repo!</p>
+                    <p style="margin-left: -3px">link to the github repo containing the source code for this very site! feel free to make an issue on my repo!</p>
                 </div>
             </div>
         </a>
@@ -40,7 +40,7 @@
             <div class="project">
                 <div class="border"></div>
                 <div class="info">
-                    <img src="../media/images/Weather_iOS_15.webp" style="top:15%;left:33%;height:95px;width:95px;">
+                    <img src="../media/images/Weather_iOS_15.webp" id="weather" style="top:15%;left:33%;height:95px;width:95px;">
                     <h1>open-weather-app</h1>
                     <p>a direct copy of the iOS weather app written in react native, w/o looking up apple design methodologies</p>
                 </div>
@@ -95,12 +95,15 @@
             const h1 = document.querySelectorAll("h1");
             const p = document.querySelectorAll("p");
             const arrow = document.getElementById("arrow");
+            const weatherIcon = document.getElementById("weather");
 
             projectWrapper.style.display = "flex";
             projectWrapper.style.justifyContent = "center";
             bg.style.backgroundSize = "600vmax";
             bg.style.backgroundPosition = "0% 0%";
             arrow.style.display = "none";
+            weatherIcon.style.height = "60px";
+            weatherIcon.style.width = "60px";
 
             for (let i = 0; i < head.length; i++) {
                 head[i].style.height = "170px";
@@ -108,7 +111,7 @@
             }
 
             for (let i = 0; i < h1.length; i++) {
-                h1[i].style.fontSize = "1rem";
+                h1[i].style.fontSize = "0.95rem";
             }
 
             for (let i = 0; i < p.length; i++) {
