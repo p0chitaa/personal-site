@@ -59,7 +59,7 @@ a {
     position: absolute;
     top: 22%;
     left: 27%;
-    min-width: 80%;
+    width: 80vmin;
     z-index: 500;
     gap: 15vmin;
     transform: translate(0%, 0%);
@@ -83,7 +83,7 @@ h2 {
     transform: translate(0%, -50%);*/
     color: rgb(197, 197, 197);
     font-size: 3rem;
-    min-width: 80%;
+    width: 80vmin;
     font-family: monospace;
     opacity: 1;
     margin-top: 0%;
@@ -110,7 +110,7 @@ p {
     top: 40%;*/
     font-family: monospace;
     font-size: 1rem;
-    width: 85%;
+    width: 80vmin;
 }
 
 

@@ -171,6 +171,7 @@
             const h5 = document.getElementsByTagName("h5");
             const body = document.querySelector("body");
             const arrow = document.getElementById("arrow");
+            const p = document.querySelectorAll("p");
             
             bgStuff.style.position = "fixed";
             arrowWrap.style.display = "none";
@@ -185,13 +186,18 @@
             //body.style.paddingBottom = "env(safe-area-inset-bottom)";
             wrapper.style.left = "11%";
             wrapper.style.top = "11%";
+            wrapper.style.minWidth = "80%";
             back.style.left = "3%";
 
             for(let i = 0; i < h2.length; i++) {
                 h2[i].style.fontSize = "1.75rem";
+                h2[i].style.minWidth = "100%";
             }
             for(let i = 0; i < h5.length; i++) {
                 h5[i].style.fontSize = "1.5rem";
+            }
+            for(let i = 0; i < p.length; i++) {
+                p[i].style.minWidth = "100%";
             }
         }
     </script>
