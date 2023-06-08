@@ -12,7 +12,8 @@
 <body>
     <header id="header">
         drew bonde
-        <p id="info">248-909-9977<br>ajbonde@oakland.edu</p>
+        <p id="info">248-909-9977<br>ajbonde@oakland.edu<br><br>
+        <a href="./media/files/Andrew Bonde - Resume (2023).pdf" download style="color: inherit">click me for my resumé!</a></p>
     </header>
     <div id="menu">
         <div id="options">
@@ -25,11 +26,6 @@
         </div>
         <div id="background-pattern"></div>
         <div id="background-image"></div>
-    </div>
-    <div id="mobile-warning" style="display:none">
-        <p>
-            mobile support in progress! please view on a desktop computer for now :))
-        </p>
     </div>
     <script>
         const menu = document.getElementById("menu");
@@ -55,7 +51,6 @@
             backgroundImage.style.backgroundPosition = "0% 0%";
             backgroundImage.style.backgroundSize = "600vmax";
             backgroundImage.style.backgroundPosition = "0% 0%";
-            //bgPattern.style.backgroundPosition = "0% -100%";
 
             if (window.innerHeight > window.innerWidth) {
                 for (let i = 0; i < options.length; i++) {
@@ -69,7 +64,7 @@
                 }
             } else {
                 for (let i = 0; i < options.length; i++) {
-                    options[i].style.fontSize = "1.75rem";
+                    options[i].style.fontSize = "2rem";
                     options[i].style.paddingTop = "10px";
                     options[i].style.paddingBottom = "10px";
                     header.style.fontSize = "1rem";
@@ -81,8 +76,6 @@
             }
             
             window.addEventListener("resize", function() {
-                // Announce the new orientation number
-                //alert(window.orientation);
                 if (window.innerHeight > window.innerWidth) {
                     for (let i = 0; i < options.length; i++) {
                         options[i].style.fontSize = "2.5rem";
@@ -95,7 +88,7 @@
                     }
                 } else {
                     for (let i = 0; i < options.length; i++) {
-                        options[i].style.fontSize = "1.75rem";
+                        options[i].style.fontSize = "2rem";
                         options[i].style.paddingTop = "10px";
                         options[i].style.paddingBottom = "10px";
                         header.style.fontSize = "1rem";
@@ -106,15 +99,6 @@
                     }
                 }
             }, false);
-
-            
-
-            //const warning = document.getElementById("mobile-warning");
-
-            //warning.style.display = "block";
-            //header.style.display = "none";
-            //optionsWrapper.style.display = "none";
-
         }
     </script>
 </body>
