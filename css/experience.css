@@ -60,7 +60,7 @@ ul {
     position: absolute;
     top: 22%;
     left: 30%;
-    max-width: 80vmin;
+    max-width: 45%;
     z-index: 500;
     gap: 15vmin;
     transform: translate(0%, 0%);
