@@ -60,7 +60,7 @@ ul {
     position: absolute;
     top: 22%;
     left: 30%;
-    width: 80%;
+    max-width: 80vmin;
     z-index: 500;
     gap: 15vmin;
     transform: translate(0%, 0%);
@@ -131,7 +131,7 @@ ul {
     top: 40%;*/
     font-family: monospace;
     font-size: 1rem;
-    width: 80vmin;
+    width: 80%;
 }
 
 /* arrow animation taken from https://gscode.in/css-scroll-down-arrows-animation/ */
